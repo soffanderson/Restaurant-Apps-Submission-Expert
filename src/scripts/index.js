@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import App from './views/app';
@@ -6,6 +7,14 @@ const app = new App({
   button: document.querySelector('#openMenu'),
   drawer: document.querySelector('#drawer'),
   content: document.querySelector('main'),
+});
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+window.addEventListener('load', () => {
+  app.renderPage();
 });
 
 // Script Lama
