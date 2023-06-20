@@ -1,3 +1,5 @@
+import DrawerInitiator from '../utils/drawer-initiator';
+
 class App {
   constructor({ button, drawer, content }) {
     this._button = button;
