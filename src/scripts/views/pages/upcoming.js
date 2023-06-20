@@ -1,3 +1,5 @@
+import TheRestaurantDbSource from '../../data/therestaurantdb-source';
+
 const Upcoming = {
   async render() {
     return `
@@ -6,7 +8,8 @@ const Upcoming = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const restaurant = await TheRestaurantDbSource.upcomingResto();
+    console.log(restaurant);
   },
 };
 
