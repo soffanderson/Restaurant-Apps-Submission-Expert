@@ -9,7 +9,7 @@ const Restaurant = {
 
   async afterRender() {
     const restaurant = await TheRestaurantDbSource.listRestaurants();
-    console.error(restaurant);
+    console.log(restaurant);
   },
 };
 
