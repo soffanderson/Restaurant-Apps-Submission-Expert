@@ -457,6 +457,37 @@ footer {
     }
   }
 }
+
+/*
+      Movie
+    */
+
+.movie {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+  color: #e0e0e0;
+}
+
+.movie__title {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  font-size: 2em;
+  margin: 10px 0 0 0;
+}
+
+.movie__poster {
+  width: 100%;
+  // max-width: 400px;
+}
+
+.movie__info {
+  margin: 8px 0;
+}
+
 @media (max-width: 720px) {
   .footer {
     text-align: left;
@@ -550,6 +581,10 @@ footer {
   }
   .post-item__description {
     font-size: 14px;
+  }
+  .movie__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 @media screen and (min-width: 700px) {
