@@ -11,6 +11,8 @@ const createRestoDetailTemplate = (resto) => `
         <p>${resto.restaurant.city}</p>
         <h4>Address</h4>
         <p>${resto.restaurant.address}</p>
+        <h4>Food Menus</h4>
+        <p id="menus"></p>
       </div>
       <div class="movie__overview">
         <h3>Description</h3>
