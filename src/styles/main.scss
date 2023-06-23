@@ -484,11 +484,23 @@ footer {
   // max-width: 400px;
 }
 
-.movie__info .movie__overview {
+.movie__info,
+.movie__overview {
   margin: 8px 0;
-  font-size: 4em;
+  font-size: 1.2em;
 }
-
+.movie__info > ul {
+  margin-left: 1rem;
+}
+.movie__info > h4 {
+  margin-top: 1rem;
+}
+.movie__overview > h4 {
+  margin-top: 1rem;
+}
+.customer_reviews {
+  font-size: 0.8em;
+}
 @media (max-width: 720px) {
   .footer {
     text-align: left;
@@ -556,7 +568,7 @@ footer {
     font-size: 24px;
   }
   .movie__info {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 @media screen and (min-width: 500px) {
@@ -573,7 +585,7 @@ footer {
   }
   .movie__info,
   .movie__overview {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 }
 @media screen and (min-width: 650px) {

@@ -7,16 +7,28 @@ const createRestoDetailTemplate = (resto) => `
       <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="${resto.name}" />
       <div class="movie__info">
         <h3>Information</h3>
-        <h4>City</h4>
-        <p>${resto.restaurant.city}</p>
-        <h4>Address</h4>
-        <p>${resto.restaurant.address}</p>
-        <h4>Food Menus</h4>
-        <p id="menus"></p>
+        <h4>City:</h4>
+          <p>${resto.restaurant?.city}</p>
+        <h4>Address:</h4>
+          <p>${resto.restaurant?.address}</p>
       </div>
       <div class="movie__overview">
         <h3>Description</h3>
-        <p>${resto.restaurant.description}</p>
+          <p>${resto.restaurant?.description}</p>
+        <h4>Foods Menu:</h4>
+            <p>
+              ${resto.restaurant?.menus?.foods?.map((el) => `${el?.name}`)?.join(', ')}
+            </p>
+        <h4>Drinks Menu:</h4>
+            <p>
+              ${resto.restaurant?.menus?.drinks?.map((el) => `${el?.name}`)?.join(', ')}
+            </p>
+        <h4>Customer Reviews:</h4>
+            <p>
+              ${resto.restaurant?.customerReviews
+                ?.map((el) => `${el?.name}: ${el?.review}<br><span class="customer_reviews">(${el?.date})</span>`)
+                ?.join('<br><br>')}
+            </p>
       </div>
     `;
 
