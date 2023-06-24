@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 import TheRestaurantDbSource from '../../data/therestaurantdb-source';
 import UrlParser from '../../routes/url-parser';
-import { createLikeButtonTemplate, createRestoDetailTemplate } from '../templates/template-creator';
+import LikeButtonInitiator from '../../utils/like-button-initiator';
+import { createRestoDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
@@ -20,8 +22,17 @@ const Detail = {
     const restaurantContainer = document.querySelector('#anime-list');
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
 
-    const likeButtonContainer = document.querySelector('#likeButtonContainer');
-    likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    const resto = await TheRestaurantDbSource.detailResto(url.id);
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      resto: {
+        id: resto.id,
+        title: resto.title,
+        overview: resto.overview,
+        backdrop_path: resto.backdrop_path,
+        vote_average: resto.vote_average,
+      },
+    });
   },
 };
 
