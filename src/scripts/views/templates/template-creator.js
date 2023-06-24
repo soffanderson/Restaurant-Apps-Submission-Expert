@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-lone-blocks */
 /* eslint-disable indent */
 import CONFIG from '../../globals/config';
@@ -54,6 +55,18 @@ const createRestoItemTemplate = (resto) => `
  </article>
 `;
 
+const createLikeButtonTemplate = () => `
+  <button aria-label="like this restaurant" id="likeButton" class="like">
+     <i class="fa fa-heart-o" aria-hidden="true"></i>
+  </button>
+`;
+
+const createLikedButtonTemplate = () => `
+  <button aria-label="unlike this restaurant" id="likeButton" class="like">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </button>
+`;
+
 {
   /* <div class="movie-item">
   <div class="movie-item__header">
@@ -73,4 +86,4 @@ const createRestoItemTemplate = (resto) => `
   </div>
 </div> */
 }
-export { createRestoItemTemplate, createRestoDetailTemplate };
+export { createRestoItemTemplate, createRestoDetailTemplate, createLikeButtonTemplate, createLikedButtonTemplate };

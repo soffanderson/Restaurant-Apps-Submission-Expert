@@ -1,6 +1,6 @@
 import TheRestaurantDbSource from '../../data/therestaurantdb-source';
 import UrlParser from '../../routes/url-parser';
-import { createRestoDetailTemplate } from '../templates/template-creator';
+import { createLikeButtonTemplate, createRestoDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
@@ -8,6 +8,7 @@ const Detail = {
       <section class="content">
         <div id="anime-list" class="movie">
         </div>
+        <div id="likeButtonContainer"></div>
       </section>
         `;
   },
@@ -18,6 +19,9 @@ const Detail = {
     console.log(restaurant);
     const restaurantContainer = document.querySelector('#anime-list');
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
+
+    const likeButtonContainer = document.querySelector('#likeButtonContainer');
+    likeButtonContainer.innerHTML = createLikeButtonTemplate();
   },
 };
 
