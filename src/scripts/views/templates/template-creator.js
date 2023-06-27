@@ -1,32 +1,34 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable max-len */
 /* eslint-disable no-lone-blocks */
 /* eslint-disable indent */
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (resto) => `
-      <h2 class="movie__title">${resto.restaurant.name}</h2>
-      <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + resto.restaurant.pictureId}" alt="${resto.name}" />
+      <h2 class="movie__title">${resto?.name}</h2>
+      <img class="movie__poster" src="${CONFIG.BASE_IMAGE_URL + resto?.pictureId}" alt="${resto?.name}" />
       <div class="movie__info">
         <h3>Information</h3>
         <h4>City:</h4>
-          <p>${resto.restaurant?.city}</p>
+          <p>${resto?.city}</p>
         <h4>Address:</h4>
-          <p>${resto.restaurant?.address}</p>
+          <p>${resto?.address}</p>
       </div>
       <div class="movie__overview">
         <h3>Description</h3>
-          <p>${resto.restaurant?.description}</p>
+          <p>${resto?.description}</p>
         <h4>Foods Menu:</h4>
             <p>
-              ${resto.restaurant?.menus?.foods?.map((el) => `${el?.name}`)?.join(', ')}
+              ${resto?.menus?.foods?.map((el) => `${el?.name}`)?.join(', ')}
             </p>
         <h4>Drinks Menu:</h4>
             <p>
-              ${resto.restaurant?.menus?.drinks?.map((el) => `${el?.name}`)?.join(', ')}
+              ${resto?.menus?.drinks?.map((el) => `${el?.name}`)?.join(', ')}
             </p>
         <h4>Customer Reviews:</h4>
             <p>
-              ${resto.restaurant?.customerReviews
+              ${resto?.customerReviews
                 ?.map((el) => `${el?.name}: ${el?.review}<br><span class="customer_reviews">(${el?.date})</span>`)
                 ?.join('<br><br>')}
             </p>
@@ -36,7 +38,7 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
  <article class="post-item">
    <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"
-     alt="${resto.name}">
+     alt="">
    <div class="post-item__content">
      <p class="post-item__date">${resto.city} -<a href="#" class="post-item__date__author">${resto.rating}</a>
      </p>
