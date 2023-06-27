@@ -26,11 +26,12 @@ const Detail = {
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       resto: {
-        id: resto.id,
-        title: resto.title,
-        overview: resto.overview,
-        backdrop_path: resto.backdrop_path,
-        vote_average: resto.vote_average,
+        id: resto?.id,
+        pictureId: resto?.pictureId,
+        name: resto?.name,
+        description: resto?.description,
+        city: resto?.city,
+        rating: resto?.rating,
       },
     });
   },
