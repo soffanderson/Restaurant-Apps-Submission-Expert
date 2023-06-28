@@ -38,9 +38,9 @@ const createRestoDetailTemplate = (resto) => `
 const createRestoItemTemplate = (resto) => `
  <article class="post-item">
    <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + resto.pictureId}"
-     alt="">
+     alt="${resto?.name}">
    <div class="post-item__content">
-     <p class="post-item__date">${resto.city} -<p class="post-item__date__author">${resto.rating}</p>
+     <p class="post-item__date">${resto.city} -<span class="post-item__date__author">${resto.rating}</span>
      </p>
      <h1 class="post-item__title"><a href="/#/detail/${resto.id}">${resto.name}</a></h1>
      <p class="post-item__description">${resto.description}</p>
